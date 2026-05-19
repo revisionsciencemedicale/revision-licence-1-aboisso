@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REVISION LICENCE 1 ABOISSO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div id="welcomePopup" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+">
+  <div style="
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    max-width:400px;
+    width:90%;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+  ">
+    <h2 style="margin-bottom:20px;">
+      Es tu dans le groupe WhatsApp REVISION LICENCE 1 ABOISSO ?
+    </h2>
+
+    <div id="popupButtons">
+      <button onclick="showMainContent()" style="
+        padding:10px 20px;
+        margin:10px;
+        border:none;
+        border-radius:8px;
+        background:#28a745;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+      ">Oui</button>
+
+      <button onclick="showWhatsappLink()" style="
+        padding:10px 20px;
+        margin:10px;
+        border:none;
+        border-radius:8px;
+        background:#dc3545;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+      ">Non</button>
+    </div>
+
+    <div id="whatsappSection" style="display:none;margin-top:20px;">
+      <p>Rejoins le groupe WhatsApp pour accéder aux compositions.</p>
+
+      <a href="https://chat.whatsapp.com/H5jzVGDs9jSBn3BQFP5sGZ?s=cl&p=a&mlu=2"
+         target="_blank"
+         onclick="showWhatsappMessage()"
+         style="
+           display:inline-block;
+           margin-top:10px;
+           padding:12px 20px;
+           background:#25D366;
+           color:white;
+           border-radius:8px;
+           text-decoration:none;
+           font-weight:bold;
+         ">
+         Rejoindre le groupe WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+function showMainContent() {
+  document.getElementById("welcomePopup").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
+}
+
+function showWhatsappLink() {
+  document.getElementById("whatsappSection").style.display = "block";
+}
+
+function showWhatsappMessage() {
+  alert("Vous êtes sur le groupe WhatsApp.");
+}
+
+</script>
+
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <h1>REVISION LICENCE 1 ABOISSO</h1>
+        <p>Composition en ligne – Sciences infirmières</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn-light" onclick="showHome()">Accueil</button>
+        <button class="btn-dark" onclick="openAdminLogin()">Administration</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="mainContent" style="display:none;">
+    <section id="homeView" class="panel">
+      <h2>Sujets de composition</h2>
+      <p class="muted">Clique sur un sujet disponible, puis renseigne tes informations pour commencer la composition.</p>
+      <div id="subjectsList" class="grid"></div>
+    </section>
+
+    <section id="quizView" class="hidden"></section>
+    <section id="resultView" class="hidden"></section>
+
+    <section id="adminView" class="panel hidden">
+      <div class="topbar">
+        <div>
+          <h2>Espace ADMIN</h2>
+          <p class="muted">Ajoute, modifie ou supprime les sujets. Les changements sont sauvegardés automatiquement.</p>
+        </div>
+        <div class="actions">
+          <button class="btn-green" onclick="openSubjectEditor()">+ Ajouter un sujet</button>
+          <button class="btn-orange" onclick="resetDefaultSubjects()">Réinitialiser les sujets par défaut</button>
+          <button class="btn-light" onclick="showHome()">Retour étudiant</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button onclick="renderAdminSubjects()">Sujets</button>
+        <button onclick="renderAdminResults()">Résultats</button>
+      </div>
+      <div id="adminContent"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden"></div>
+
+  <script src="script.js"></script>
+
+  <footer style="margin-top:40px;padding:20px;text-align:center;font-size:16px;">
+    <p>
+      Rejoignez le groupe WhatsApp REVISION LICENCE 1 ABOISSO pour plus d’exercices et de résumés de cours.
+    </p>
+    <p>
+      <a href="https://chat.whatsapp.com/H5jzVGDs9jSBn3BQFP5sGZ?s=cl&p=a&mlu=2" target="_blank" 
+         onclick="showWhatsappMessage()"
+         style="color:#25D366;font-weight:bold;text-decoration:none;">
+         Rejoindre le groupe WhatsApp
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>
